@@ -19,25 +19,30 @@ kids_data.each_line do |kid|
     postal_code   = kid_data_array[12]
     house_value   = kid_data_array[13]
 
+
     if behavior == 'naughty'
       toys = [toys.last]
-      unless toys == "kaleidoscope"
+      unless toys == "Kaleidoscope"
       end
 
       end
-
 
     if house_value.to_i < 200000
       charge = 0
     elsif house_value.to_i < 1000000 && house_value.to_i >= 200000
       charge = 100
+    # elsif toys == "Kaleidoscope" WTF
+    #   charge = 0
     else
       charge = 1000
     end
 
+
+
     subtotal = charge * toys.count
     hst = subtotal * 0.13
     total = subtotal + hst
+
 
     if behavior == "naughty"
       addendum = "P.S. For a limited time get 25% off the best-seller by Ms. Claus, I’m Getting Nothing for Christmas: Raising Toy-Worthy Children in a Device-Driven World."
